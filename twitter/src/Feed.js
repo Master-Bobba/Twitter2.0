@@ -11,9 +11,7 @@ import Typography from '@mui/material/Typography';
 const Feed = () => {
 
     const [postData, setPostData] = useState(null);
-    const endpoint = 'http://51.20.252.197/:8080/posts';
-
-
+    const endpoint = 'http://16.171.114.124:8080/posts';
 
     useEffect(()=> {
         const fetchPosts = async() => {
