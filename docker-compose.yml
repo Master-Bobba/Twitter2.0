@@ -4,22 +4,22 @@ networks:
   default:
 
 services:
-  react-app:
-    build:
-      context: ./twitter
-    volumes:
-      - ./twitter:/app
-    ports:
-      - "3000:3000"
+  # react-app:
+  #   build:
+  #     context: ./twitter
+  #   volumes:
+  #     - ./twitter:/app
+  #   ports:
+  #     - "3000:3000"
 
-  spring-app:
-    image: openjdk:latest
-    working_dir: /app
-    volumes:
-      - ./XSS:/app
-    ports:
-      - "8080:8080"
-    command: ./mvnw spring-boot:run
+  # spring-app:
+  #   image: openjdk:latest
+  #   working_dir: /app
+  #   volumes:
+  #     - ./XSS:/app
+  #   ports:
+  #     - "8080:8080"
+  #   command: ./mvnw spring-boot:run
 
 
   # db:
@@ -45,7 +45,6 @@ services:
       MYSQL_DATABASE: Xss_db
       MYSQL_USER: springuser
       MYSQL_PASSWORD: springuser
-      MYSQL_ROOT_HOST: "%"
 
 
 
