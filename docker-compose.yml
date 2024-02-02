@@ -38,8 +38,8 @@ services:
     container_name: XSS_container
     ports:
     - 3306:3306
-    # volumes:
-    # - "./.data/db:/var/lib/mysql"
+    volumes:
+    - "./.data/db:/var/lib/mysql"
     environment:
       MYSQL_ROOT_PASSWORD: some_pass
       MYSQL_DATABASE: Xss_db
