@@ -46,16 +46,15 @@ const Feed = () => {
 
     return (
         <div>
+            <form onSubmit={handleSubmit}>
+                <div class="form-group">
+                    <label for="exampleInputPassword1"><b> NEW POST </b></label>
+                    <input type="text" class="form-control" id="newPost" placeholder="New Post Content..."/>
+                </div>
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
             {postData ? (
-                <div>
-                    <form onSubmit={handleSubmit}>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1"><b> NEW POST </b></label>
-                        <input type="text" class="form-control" id="newPost" placeholder="New Post Content..."/>
-                    </div>
-                        <button type="submit" class="btn btn-secondary">Submit</button>
-                    </form>
-                
+                <div>                
                     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     {postData.map((post) => (
                         <div>
