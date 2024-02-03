@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 const Feed = () => {
 
     const [postData, setPostData] = useState(null);
-    const endpoint = 'http://16.171.114.124:8080/posts';
+    const endpoint = 'http://51.20.128.84:8080/posts';
 
     useEffect(()=> {
         const fetchPosts = async() => {
@@ -29,12 +29,12 @@ const Feed = () => {
     
     const handleSubmit = (event) =>{
         event.preventDefault();
-        fetch('http://localhost:8080/post',{
+        fetch('http://51.20.128.84:8080/post',{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
                 "title": "New Post",
-                "userName": "Master Bobba",
+                "userName": "Master_Bobba",
                 "content": document.querySelector('#newPost').value
                 // "content": "Hi There  <img onerror=alert(''Congratulations_You_Hacked_Yourself''); src=invalid-image/>"
             })
