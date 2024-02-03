@@ -4,6 +4,22 @@ networks:
   default:
 
 services:
+  db:
+    image: mysql:8.0.36
+    # container_name: XSS_container
+    ports:
+    - 3306:3306
+    command:
+      - "--default-authentication-plugin=mysql_native_password"
+    # volumes:
+    # - "./.data/db:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: some_pass
+      MYSQL_DATABASE: Xss_db
+      MYSQL_USER: springuser
+      MYSQL_PASSWORD: springuser
+
   react-app:
     build:
       context: ./twitter
@@ -31,23 +47,6 @@ services:
   #     MYSQL_PASSWORD: springuser
   #   ports:
   #     - "3306:3306"
-
-
-  db:
-    image: mysql:8.0.36
-    # container_name: XSS_container
-    ports:
-    - 3306:3306
-    command:
-      - "--default-authentication-plugin=mysql_native_password"
-    # volumes:
-    # - "./.data/db:/var/lib/mysql"
-    environment:
-      MYSQL_ROOT_HOST: "%"
-      MYSQL_ROOT_PASSWORD: some_pass
-      MYSQL_DATABASE: Xss_db
-      MYSQL_USER: springuser
-      MYSQL_PASSWORD: springuser
 
 
 
