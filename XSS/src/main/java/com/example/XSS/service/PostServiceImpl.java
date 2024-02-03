@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class PostServiceImpl implements PostService{
 
-    private static String DB_URL = "jdbc:mysql://51.20.128.84:3306/Xss_db";
+    private static String DB_URL = "jdbc:mysql://13.48.5.243:3306/Xss_db";
     private static String USER = "springuser";
     private static String PASSWORD = "springuser";
 
