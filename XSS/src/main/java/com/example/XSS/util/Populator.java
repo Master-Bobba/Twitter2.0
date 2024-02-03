@@ -28,19 +28,19 @@ public class Populator {
                 "    user_name VARCHAR (255) NOT NULL,\n" +
                 "    content VARCHAR (255) NOT NULL\n" +
                 ");");
-        queries.add("INSERT INTO POST(TITLE, USER_NAME, CONTENT)\n" +
-                "VALUES\n" +
-                "    ('AWS', 'Master_bobba', 'This actually works');");
+//        queries.add("INSERT INTO POST(TITLE, USER_NAME, CONTENT)\n" +
+//                "VALUES\n" +
+//                "    ('AWS', 'Master_bobba', 'This actually works');");
 
-        for (String sql : queries){
+//        for (String sql : queries){
             try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
                 Statement stmt = conn.createStatement();){
-                stmt.executeUpdate(sql);
+                stmt.executeUpdate(queries.get(0));
 
             }catch(SQLException ex){
                 throw new RuntimeException(ex);
             }
-        }
+//        }
 
 
     }
