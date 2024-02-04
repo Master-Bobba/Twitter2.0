@@ -11,13 +11,13 @@ import Typography from '@mui/material/Typography';
 const Feed = () => {
 
     const [postData, setPostData] = useState(null);
-    const endpoint = 'http://13.48.5.243:8080/posts';
+    const endpoint = 'http://54.85.97.126:8080';
 
     useEffect(()=> {
         const fetchPosts = async() => {
             try {
                 setPostData(
-                    await fetch(endpoint)
+                    await fetch(endpoint + '/posts')
                     .then((response) => response.json())
                 )
             } catch(error){
@@ -29,18 +29,18 @@ const Feed = () => {
     
     const handleSubmit = (event) =>{
         console.log("Submit button pressed SUCCESSFULLY")
-        // event.preventDefault();
-        // fetch('http://51.20.128.84:8080/post',{
-        //     method: 'post',
-        //     headers: {'Content-Type':'application/json'},
-        //     body: JSON.stringify({
-        //         "title": "New Post",
-        //         "userName": "Master_Bobba",
-        //         "content": document.querySelector('#newPost').value
-        //         // "content": "Hi There  <img onerror=alert(''Congratulations_You_Hacked_Yourself''); src=invalid-image/>"
-        //     })
-        // });
-        // document.querySelector('#newPost').value = "";
+        event.preventDefault();
+        fetch(endpoint + '/post',{
+            method: 'post',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+                "title": "New Post",
+                "userName": "Master_Bobba",
+                "content": document.querySelector('#newPost').value
+                // "content": "Hi There  <img onerror=alert(''Congratulations_You_Hacked_Yourself''); src=invalid-image/>"
+            })
+        });
+        document.querySelector('#newPost').value = "";
     };
 
     return (

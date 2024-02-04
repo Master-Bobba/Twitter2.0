@@ -13,7 +13,7 @@ import java.util.List;
 @Component
 public class Populator {
 
-    private static String DB_URL = "jdbc:mysql://13.48.5.243:3306/Xss_db";
+    private static String DB_URL = "jdbc:mysql://54.85.97.126:3306/Xss_db";
     private static String USER = "springuser";
     private static String PASSWORD = "springuser";
 
