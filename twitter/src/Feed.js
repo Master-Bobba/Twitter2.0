@@ -17,7 +17,7 @@ const Feed = () => {
         const fetchPosts = async() => {
             try {
                 setPostData(
-                    await fetch('http://54.85.97.126:8080/posts')
+                    await fetch(endpoint + '/posts')
                     .then((response) => response.json())
                 )
             } catch(error){
@@ -30,7 +30,7 @@ const Feed = () => {
     const handleSubmit = (event) =>{
         console.log("Submit button pressed SUCCESSFULLY")
         event.preventDefault();
-        fetch('http://54.85.97.126:8080/post',{
+        fetch(endpoint + '/post',{
             method: 'post',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
